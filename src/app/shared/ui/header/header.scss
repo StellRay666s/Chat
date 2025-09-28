@@ -1,0 +1,13 @@
+:host{
+  width: 100%;
+  display: block;
+  background: var(--p-slate-500);
+}
+header{
+  padding: 10px 0;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1728px;
+  justify-content: space-between;
+  align-items: center;
+}

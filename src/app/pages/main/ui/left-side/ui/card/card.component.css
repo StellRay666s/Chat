@@ -1,0 +1,12 @@
+.card{
+ display: flex;
+ gap: 15px;
+ padding: 8px 4px;
+
+
+  &:hover{
+      cursor: pointer;
+      transition: 0.1s;
+      background-color: var(--p-slate-300);
+  }
+}

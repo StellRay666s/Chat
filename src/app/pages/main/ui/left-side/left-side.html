@@ -1,0 +1,9 @@
+<p-dataview #dv [value]="rooms()">
+    <ng-template #list let-items>
+        <div style="display: flex; flex-direction: column; gap: 20px;" >
+         @for (item of items; track $index) {
+            <app-card (click)="selectRooom(item.uuId)"  [name]="item.name" [message]="item.message"></app-card>
+         }
+         </div>
+    </ng-template>
+</p-dataview>

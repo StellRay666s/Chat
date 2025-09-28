@@ -1,0 +1,6 @@
+<p-message [severity]="userId === accountUserId()? 'success' : 'secondary'">
+    <ng-template #icon>
+        <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
+    </ng-template>
+    <span class="ml-2">{{text}}</span>
+</p-message>

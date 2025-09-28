@@ -1,0 +1,41 @@
+:host{
+    background-color: var(--p-zinc-900);
+    padding: 0 140px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    display: grid;
+    overflow-y: hidden;
+    grid-template-rows: 2fr 0.2fr;
+}
+
+.messages{
+    padding-right: 20px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+
+.container{
+    height: 100%;
+    overflow-y: hidden;
+    flex-direction: column;
+    gap: 14px;
+}
+
+textarea{
+    max-height: 200px;
+    flex: 2;
+    width: 100%;
+    resize: none;
+}
+
+.controls{
+    align-self: flex-end;
+    display: flex;
+    gap: 8px;
+}
+
+    button{
+        flex: 0.2;
+        height: 40px;
+    }

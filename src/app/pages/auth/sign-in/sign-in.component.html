@@ -1,0 +1,25 @@
+<form [formGroup]="signInForm" (ngSubmit)="submit()">
+  <h2>Авторизация</h2>
+    <label>
+      Логин
+    <input id="login" pInputText formControlName="login"/>
+    </label>
+  @if(isInvalid('login')){
+   @if(signInForm.get('login')?.errors?.['required']){
+    <p-message severity="error" size="small" variant="simple">Логин не может быть пустым</p-message>
+   }
+    @if(signInForm.get('login')?.errors?.['email']){
+    <p-message severity="error" size="small" variant="simple">Некорректный email</p-message>
+   }
+  }
+    <label>
+      Пароль
+    <input pInputText formControlName="password"/>
+    </label>
+  @if (isInvalid('password')){
+    @if(signInForm.get('password')?.errors?.['required']){
+      <p-message severity="error" size="small" variant="simple">Пароль не может быть пустым</p-message>
+    }
+  }
+  <button pButton>Войти</button>
+</form>

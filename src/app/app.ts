@@ -1,5 +1,7 @@
-import { Component, signal } from '@angular/core';
+
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,8 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
-  protected readonly title = signal('test_primeng');
+export class App implements OnInit {
+
+ngOnInit(): void {
+}
 }

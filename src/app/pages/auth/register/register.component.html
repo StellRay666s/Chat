@@ -1,0 +1,38 @@
+<form [formGroup]="registerForm" (ngSubmit)="submit()">
+  <h2>Регистрация</h2>
+  <label>
+    Логин
+    <input id="login" pInputText formControlName="login"/>
+  </label>
+  @if(isInvalid('login')){
+    @if(registerForm.get('login')?.errors?.['required']){
+      <p-message severity="error" size="small" variant="simple">Логин не может быть пустым</p-message>
+    }
+    @if(registerForm.get('login')?.errors?.['email']){
+      <p-message severity="error" size="small" variant="simple">Некорректный email</p-message>
+    }
+  }
+  <label>
+    Пароль
+    <input pInputText formControlName="password"/>
+  </label>
+  @if (isInvalid('password')){
+    @if(registerForm.get('password')?.errors?.['required']){
+      <p-message severity="error" size="small" variant="simple">Пароль не может быть пустым</p-message>
+    }
+  }
+
+  <label>
+    Повторите пароль
+    <input pInputText formControlName="repeatPassword"/>
+  </label>
+  @if (isInvalid('repeatPassword')){
+    @if(registerForm.get('repeatPassword')?.errors?.['required']){
+      <p-message severity="error" size="small" variant="simple">Поле не может быть пустым</p-message>
+    }
+    @if(registerForm.get('repeatPassword')?.errors?.['repeatPassword']){
+      <p-message severity="error" size="small" variant="simple">Пароли должны совпадать</p-message>
+    }
+  }
+  <button pButton>Регистрация</button>
+</form>
